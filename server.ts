@@ -2,7 +2,7 @@ import app from './app';
 import mongoose from 'mongoose';
 
 const PORT = process.env.PORT || 5002;
-const MONGO_URI = 'mongodb://localhost:27017/storex';
+const MONGO_URI: string = process.env.MONGO_URL as string;
 
 mongoose.connect(MONGO_URI)
   .then(() => {
