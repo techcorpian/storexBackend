@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import User, { IUser } from '../models/User';
-import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+//register function
 export const register = async (req: Request, res: Response) => {
   try {
     const { username, email, password } = req.body;
@@ -18,6 +18,7 @@ export const register = async (req: Request, res: Response) => {
   }
 };
 
+//login function
 export const login = async (req: Request, res: Response): Promise<void> => {
     try {
       const { email, password } = req.body;

@@ -1,13 +1,8 @@
 import { Request, Response } from 'express';
 import { File } from '../models/File';
+import { getErrorMessage } from '../utlis/commonHandler';
 
-// Helper function to extract error messages safely
-const getErrorMessage = (error: unknown): string => {
-    if (error instanceof Error) {
-        return error.message;
-    }
-    return String(error);
-};
+// Create a file
 
 // Create a file
 export const createFile = async (req: Request, res: Response): Promise<void> => {
@@ -19,7 +14,6 @@ export const createFile = async (req: Request, res: Response): Promise<void> => 
         res.status(500).json({ error: getErrorMessage(error) });
     }
 };
-
 // Get all files
 export const getFiles = async (_req: Request, res: Response): Promise<void> => {
     try {

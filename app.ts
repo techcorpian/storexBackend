@@ -5,6 +5,7 @@ import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import folderRoutes from './routes/folderRoutes';
 import fileRoutes from './routes/fileRoutes';
+import projectRoutes from './routes/projectRoutes';
 
 dotenv.config();
 const app = express();
@@ -17,5 +18,6 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/folder', folderRoutes);
 app.use('/api/file', fileRoutes);
+app.use('/api/project', projectRoutes);
 
 export default app;

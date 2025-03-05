@@ -1,14 +1,7 @@
 import { Request, Response } from 'express';
 import { Folder } from '../models/Folder';
 import { File } from '../models/File';
-
-// Helper function to extract error messages safely
-const getErrorMessage = (error: unknown): string => {
-    if (error instanceof Error) {
-        return error.message;
-    }
-    return String(error);
-};
+import { getErrorMessage } from '../utlis/commonHandler';
 
 // Create a folder
 export const createFolder = async (req: Request, res: Response): Promise<void> => {

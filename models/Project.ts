@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
 
-const folderSchema = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: false },
-  master_id: { type: String, required: true },
   blockstatus: { type: Number, default: 0},
   deletestatus: { type: Number, default: 0},
 },
@@ -12,4 +11,4 @@ const folderSchema = new mongoose.Schema({
 }
 );
 
-export const Folder = mongoose.model('Folder', folderSchema);
+export const Project = mongoose.model('Project', projectSchema);
